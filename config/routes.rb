@@ -1,4 +1,8 @@
 Collegeproject2::Application.routes.draw do
+  get "students/index"
+
+  get "students/show"
+
   devise_for :cbos
 
   devise_for :students
@@ -9,6 +13,8 @@ Collegeproject2::Application.routes.draw do
   # first created -> highest priority.
 
   resources :pages
+  resources :students
+  resources :cbos
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

@@ -13,6 +13,8 @@ gem "geocoder", "~> 1.1.1"
 
 gem 'paperclip', '~> 3.0.3'
 
+gem 'formtastic'
+
 group :development do
 	gem 'annotate', '~> 2.4.1.beta' 
 end

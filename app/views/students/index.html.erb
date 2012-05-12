@@ -1,0 +1,9 @@
+<h1>Students<h1>
+
+<table>
+<% @student.each do |student| %>
+	<tr>
+		<td><%= student.full_name %></td><td><%= student.school %></td>
+	</tr>
+<% end %>
+</table>
