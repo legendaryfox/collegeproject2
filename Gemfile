@@ -7,6 +7,8 @@ gem 'rails', '3.1.1'
 
 gem 'sqlite3'
 
+gem 'pg'
+
 gem "devise", "~> 2.0.4"
 
 gem "geocoder"
