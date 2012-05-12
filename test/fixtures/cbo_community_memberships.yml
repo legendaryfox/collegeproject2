@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cbo_id: 1
+  community_id: 1
+
+two:
+  cbo_id: 1
+  community_id: 1

@@ -8,13 +8,30 @@ class Student < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
   attr_accessible :first_name, :last_name, :school, :about_me
+  
+  has_many :student_community_memberships
+  has_many :communities, :through => :student_community_memberships, :source => :community
 
   # Return the full name of the Student
   def full_name
     return ((self.first_name || '') + ' ' + (self.last_name || '') ).rstrip
   end
   
+  def part_of_community?(community)
+    return self.student_community_memberships.find_by_community_id(community)
+  end
   
+  def join_community(community)
+    if !self.part_of_community?(community)
+      self.student_community_memberships.create(:community_id => community.id)
+    end
+  end
+  
+  def leave_community(community)
+    if self.part_of_community?(community)
+      self.student_community_memberships.find_by_community_id(community).destroy
+    end
+  end
   
   
 end

@@ -8,6 +8,25 @@ class Cbo < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :name, :description
   
+  has_many :cbo_community_memberships
+  has_many :communities, :through => :cbo_community_memberships, :source => :community
+  
+  def part_of_community?(community)
+    return self.cbo_community_memberships.find_by_community_id(community)
+  end
+  
+  def join_community(community)
+    if !self.part_of_community?(community)
+      self.cbo_community_memberships.create(:community_id => community.id)
+    end
+  end
+  
+  def leave_community(community)
+    if self.part_of_community?(community)
+      self.cbo_community_memberships.find_by_community_id(community).destroy
+    end
+  end
+  
 end
 # == Schema Information
 #
