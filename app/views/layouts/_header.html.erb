@@ -1,0 +1,11 @@
+<ul>
+	<li><%= link_to "New Student", new_student_registration_path %></li>
+	<li><%= link_to "Student Sign In", new_student_session_path %></li>
+	<li><%= link_to "Student Sign Out", destroy_student_session_path, :method => :delete %></li>
+</ul>
+
+<ul>
+	<li><%= link_to "New CBO", new_cbo_registration_path %></li>
+	<li><%= link_to "CBO Sign In", new_cbo_session_path %></li>
+	<li><%= link_to "CBO Sign Out", destroy_cbo_session_path, :method => :delete %></li>
+</ul>
