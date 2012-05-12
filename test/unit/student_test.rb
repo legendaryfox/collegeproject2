@@ -26,5 +26,13 @@ end
 #  last_name              :string(255)
 #  school                 :string(255)
 #  about_me               :text
+#  latitude               :float
+#  longitude              :float
+#  address1               :string(255)
+#  address2               :string(255)
+#  city                   :string(255)
+#  state                  :string(255)
+#  zip                    :string(255)
+#  country                :string(255)
 #
 

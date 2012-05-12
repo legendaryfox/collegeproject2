@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120512073103) do
+ActiveRecord::Schema.define(:version => 20120512081742) do
 
   create_table "cbo_community_memberships", :force => true do |t|
     t.integer  "cbo_id"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(:version => 20120512073103) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "country"
   end
 
   add_index "cbos", ["email"], :name => "index_cbos_on_email", :unique => true
@@ -45,6 +53,14 @@ ActiveRecord::Schema.define(:version => 20120512073103) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "country"
   end
 
   create_table "student_community_memberships", :force => true do |t|
@@ -71,6 +87,14 @@ ActiveRecord::Schema.define(:version => 20120512073103) do
     t.string   "last_name"
     t.string   "school"
     t.text     "about_me"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "country"
   end
 
   add_index "students", ["email"], :name => "index_students_on_email", :unique => true

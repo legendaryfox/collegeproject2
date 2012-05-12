@@ -1,2 +1,35 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>The College Project - Home Page</h1>
+<p>This is the first page people see when they visit the home page.</p>
+
+<p>Let's find out where they are! Do some reverse geocoding</p>
+
+<p>Welcome! You are coming from <%= @user_location %></p>
+
+<p>Nearby Communities:</p>
+<% @nearby_communities.each do |community| %>
+<%= community.name %> <br />
+<% end %>
+
+<br />
+
+<p>Nearby CBOs:</p>
+<% @nearby_cbos.each do |cbo| %>
+<%= cbo.name %> <br />
+<% end %>
+
+<br />
+
+<p>Nearby Students:</p>
+<% @nearby_students.each do |student| %>
+<%= student.full_name %> <br />
+<% end %>
+
+<br />
+
+
+
+<p>We probably want to put the map in this section</p>
+
+
+
+<p>Show the sign-up box with login option if they aren't logged in; also give choice for CBO or Student login.</p>

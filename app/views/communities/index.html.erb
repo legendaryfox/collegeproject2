@@ -1,0 +1,14 @@
+<h1>Communities#index</h1>
+<p>Find me in app/views/communities/index.html.erb</p>
+
+<table>
+<% @communities.each do |community| %>
+	<tr>
+		<td><%= community.name %></td>
+		<td><%= link_to "Edit", edit_community_path(community) %>
+	</tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to "New Community", new_community_path %>

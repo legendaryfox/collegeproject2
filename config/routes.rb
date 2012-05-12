@@ -1,4 +1,12 @@
 Collegeproject2::Application.routes.draw do
+  get "communities/new"
+
+  get "communities/edit"
+
+  get "communities/index"
+
+  get "communities/show"
+
   get "cbos/index"
 
   get "cbos/show"
@@ -21,6 +29,7 @@ Collegeproject2::Application.routes.draw do
   resources :pages
   resources :students
   resources :cbos
+  resources :communities
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

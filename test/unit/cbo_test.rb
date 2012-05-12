@@ -24,5 +24,13 @@ end
 #  description            :text
 #  created_at             :datetime
 #  updated_at             :datetime
+#  latitude               :float
+#  longitude              :float
+#  address1               :string(255)
+#  address2               :string(255)
+#  city                   :string(255)
+#  state                  :string(255)
+#  zip                    :string(255)
+#  country                :string(255)
 #
 

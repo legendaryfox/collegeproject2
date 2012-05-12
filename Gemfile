@@ -9,11 +9,14 @@ gem 'sqlite3'
 
 gem "devise", "~> 2.0.4"
 
-gem "geocoder", "~> 1.1.1"
+gem "geocoder"
+
+gem 'country-select'
 
 gem 'paperclip', '~> 3.0.3'
 
 gem 'formtastic'
+
 
 group :development do
 	gem 'annotate', '~> 2.4.1.beta' 

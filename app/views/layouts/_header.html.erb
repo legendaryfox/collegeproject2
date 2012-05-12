@@ -1,4 +1,8 @@
 <ul>
+	<li><%= link_to "Home Page", root_path %></li>
+</ul>
+
+<ul>
 	<li><%= link_to "New Student", new_student_registration_path %></li>
 	<li><%= link_to "Student Sign In", new_student_session_path %></li>
 	<li><%= link_to "Student Sign Out", destroy_student_session_path, :method => :delete %></li>
@@ -15,4 +19,5 @@
 <ul>
 	<li><%= link_to "Students", students_path %></li>
 	<li><%= link_to "CBOs", cbos_path %></li>
+	<li><%= link_to "Communities", communities_path %></li>
 </ul>
