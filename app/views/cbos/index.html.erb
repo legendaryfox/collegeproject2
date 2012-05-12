@@ -1,0 +1,9 @@
+<h1>CBOs</h1>
+
+<table>
+<% @cbos.each do |cbo| %>
+	<tr>
+		<td><%= cbo.email %></td><td><%= link_to cbo.name, cbo %></td><td><%= cbo.description %></td>
+	</tr>
+<% end %>
+</table>

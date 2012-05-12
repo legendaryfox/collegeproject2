@@ -1,4 +1,10 @@
 Collegeproject2::Application.routes.draw do
+  get "cbos/index"
+
+  get "cbos/show"
+
+  get "cbos/edit"
+
   get "students/index"
 
   get "students/show"

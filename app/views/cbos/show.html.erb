@@ -1,0 +1,8 @@
+<h1>Cbos#show</h1>
+<p>Find me in app/views/cbos/show.html.erb</p>
+
+Name: <%= @cbo.name %> <br />
+Email: <%= @cbo.email %> <br />
+Description: <%= simple_format(@cbo.description) %> <br />
+
+<%= link_to "Edit", edit_cbo_path(@cbo) %>
