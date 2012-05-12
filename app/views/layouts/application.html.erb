@@ -5,9 +5,14 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+ <%= stylesheet_link_tag 'formtastic', 'my_formtastic_changes' %>
+  <!--[if IE 6]><%= stylesheet_link_tag 'formtastic_ie6' %><![endif]-->
+  <!--[if IE 7]><%= stylesheet_link_tag 'formtastic_ie7' %><![endif]-->
 </head>
 <body>
 	<%= render 'layouts/header' %>
+	
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>
 <%= yield %>
