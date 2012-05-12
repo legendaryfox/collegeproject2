@@ -14,7 +14,7 @@ gem "geocoder", "~> 1.1.1"
 gem 'paperclip', '~> 3.0.3'
 
 group :development do
-	gem 'annotate'
+	gem 'annotate', '~> 2.4.1.beta' 
 end
 
 
