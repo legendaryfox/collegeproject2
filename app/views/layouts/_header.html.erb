@@ -1,23 +1,51 @@
-<ul>
-	<li><%= link_to "Home Page", root_path %></li>
-</ul>
+<header>
+	<div class="container">
+    	<%= link_to logo, root_path %>
+        <nav>
+        	<ul class="main">
+            	<li><%= link_to "Map", root_path %></li>
+                
+                <li class="nav-sub-event"><%= link_to "Organizations", "#" %>
+                	<div class="nav-sub-container">
+                    	<ul>
+                        	<li><%= link_to "My Organizations", cbos_path %></li>
+                            <li><%= link_to "Nearby Organizations", cbos_path %></li>
+                            <li><%= link_to "All Organizations", '/pages/allorganizations' %></li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li class="nav-sub-event"><%= link_to "Communities", "#" %>
+                	<div class="nav-sub-container">
+                    	<ul>
+                        	<li><%= link_to "My Commmunities", communities_path %></a></li>
+                            <li><%= link_to "Nearby Communities", communities_path %></li>
+                            <li><%= link_to "All Communities", communities_path %></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <ul class="profile">
+            	<!-- This should appear only when logged in -->
+            	<li class="nav-sub nav-sub-event"><%= link_to "My Profile", "#" %>
+                	<div class="nav-sub-container">
+                    	<ul>
+                        	<li><%= link_to "My Profile", '/pages/profile' %></li>
+                        	<!-- Delete above line and remove comment to actually link to profile
+                        		<li><%= link_to "My Profile", current_student %></li>
+                        	-->
+                            <li><%= link_to "Settings", "#" %></li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <!-- This should change to 'Logout' when logged in -->
+                <li><%= link_to "Login", new_student_session_path %></li>
+                <!--
+                <li><%= link_to "Logout", destroy_student_session_path, :method => :delete %></li>
+            	-->
 
-<ul>
-	<li><%= link_to "New Student", new_student_registration_path %></li>
-	<li><%= link_to "Student Sign In", new_student_session_path %></li>
-	<li><%= link_to "Student Sign Out", destroy_student_session_path, :method => :delete %></li>
-	<li><%= link_to "My Student Profile", current_student %></li>
-</ul>
-
-<ul>
-	<li><%= link_to "New CBO", new_cbo_registration_path %></li>
-	<li><%= link_to "CBO Sign In", new_cbo_session_path %></li>
-	<li><%= link_to "CBO Sign Out", destroy_cbo_session_path, :method => :delete %></li>
-	<li><%= link_to "My CBO Profile", current_cbo %></li>
-</ul>
-
-<ul>
-	<li><%= link_to "Students", students_path %></li>
-	<li><%= link_to "CBOs", cbos_path %></li>
-	<li><%= link_to "Communities", communities_path %></li>
-</ul>
+            </ul>
+        </nav>
+    </div>
+</header>

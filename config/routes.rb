@@ -23,6 +23,12 @@ Collegeproject2::Application.routes.draw do
 
   get "pages/home"
 
+  #temporary routes
+  get "pages/admin"
+  get "pages/allorganizations"
+  get "pages/organizationdetail"
+  get "pages/profile"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
