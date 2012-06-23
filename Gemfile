@@ -19,6 +19,8 @@ gem 'paperclip', '~> 3.0.3'
 
 gem 'formtastic'
 
+gem 'possessive'
+
 
 group :development do
 	gem 'annotate', '~> 2.4.1.beta' 

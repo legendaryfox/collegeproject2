@@ -145,7 +145,7 @@ header, section, footer, aside, nav, article, figure {
 			color: #635e5e;
 		}
 	
-	input[type=submit] {
+	#front_page_signup_submit {
 		width: 115px; height: 38px; float: right; padding: 7px 10px; margin: 0;
 		cursor: pointer;
 		color: #fff;

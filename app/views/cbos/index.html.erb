@@ -1,11 +1,26 @@
-<h1>CBOs</h1>
+<div class="container">
+	<div id="content">
+    	<h2>All Organizations</h2>
+        
+        <div class="push"></div>
+        
+		<% @cbos.each do |cbo| %>
+        <div class="box">
+            <a href="<%= cbo_path(cbo) %>">
+            	<img src="http://www.bnntv.org/sites/default/files/what-is-bnn.jpg">
+            	<div class="box-footer">
+                	<h3><%= cbo.name %></h3>
+                    <h4>Learn More</h4>
+                </div>
+            </a>
+        </div>
+		<% end %>
 
-<table>
-<% @cbos.each do |cbo| %>
-	<tr>
-		<td><%= cbo.email %></td>
-		<td><%= link_to cbo.name, cbo %></td>
-		<td><%= cbo.description %></td>
-	</tr>
-<% end %>
-</table>
+
+
+        
+        <div class="push"></div>
+        
+    </div>
+</div>
+

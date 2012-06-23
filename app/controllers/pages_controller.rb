@@ -1,13 +1,20 @@
 class PagesController < ApplicationController
   def home
     # Find the city they are in
-    request_location = request.location.city + ', ' + request.location.state + ', ' + request.location.country
-    @user_location = request_location ? 'Boston, MA, USA' : request_location # set a default safe location
+    if (!request.location.city.empty? && !request.location.state.empty? && !request.location.country.empty?)
+      puts "Case 1"
+      @user_location = request.location.city + ', ' + request.location.state + ', ' + request.location.country
+    else
+      puts "Case 2"
+      @user_location = 'Boston, MA, USA'
+    end
+
     
     # Geocode their location
-    user_coordinates = Geocoder.coordinates(@user_location)
+    user_coordinates = Geocoder.coordinates(@user_location) || [42.3584308, -71.0597732] 
     
     # Nearby Communities - 30 mile radius
+    puts "user coordinates is #{user_coordinates} for #{@user_location}"
     @nearby_communities = Community.near(user_coordinates, 30)
     
     # Nearby CBOs - 30 mile radius

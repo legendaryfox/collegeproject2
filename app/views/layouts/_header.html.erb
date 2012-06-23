@@ -25,25 +25,36 @@
                     </div>
                 </li>
             </ul>
+			
             <ul class="profile">
+				<% if student_signed_in? %>
+				
             	<!-- This should appear only when logged in -->
             	<li class="nav-sub nav-sub-event"><%= link_to "My Profile", "#" %>
                 	<div class="nav-sub-container">
                     	<ul>
-                        	<li><%= link_to "My Profile", '/pages/profile' %></li>
+                        	<li><%= link_to "My Profile", current_student %></li>
                         	<!-- Delete above line and remove comment to actually link to profile
                         		<li><%= link_to "My Profile", current_student %></li>
                         	-->
-                            <li><%= link_to "Settings", "#" %></li>
+                            <li><%= link_to "Settings", "/pages/profile" %></li>
                         </ul>
                     </div>
                 </li>
+
+				<% end %>
                 
-                <!-- This should change to 'Logout' when logged in -->
-                <li><%= link_to "Login", new_student_session_path %></li>
-                <!--
-                <li><%= link_to "Logout", destroy_student_session_path, :method => :delete %></li>
-            	-->
+
+				<% if student_signed_in? %>
+					<li><%= link_to "Logout", destroy_student_session_path, :method => :delete %></li>
+				<% elsif cbo_signed_in? %>
+					<li><%= link_to "Logout", destroy_cbo_session_path, :method => :delete %></li>
+				<% else %>
+                	<li><%= link_to "Login", new_student_session_path %></li>
+				<% end %>
+
+                
+
 
             </ul>
         </nav>

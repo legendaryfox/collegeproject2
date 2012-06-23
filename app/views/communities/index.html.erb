@@ -1,14 +1,26 @@
-<h1>Communities#index</h1>
-<p>Find me in app/views/communities/index.html.erb</p>
+<div class="container">
+	<div id="content">
+    	<h2>All Communities</h2>
+        
+        <div class="push"></div>
+        
+		<% @communities.each do |community| %>
+        <div class="box">
+            <a href="<%= community_path(community) %>">
+            	<img src="http://www.bnntv.org/sites/default/files/what-is-bnn.jpg">
+            	<div class="box-footer">
+                	<h3><%= community.name %></h3>
+                    <h4>Learn More</h4>
+                </div>
+            </a>
+        </div>
+		<% end %>
 
-<table>
-<% @communities.each do |community| %>
-	<tr>
-		<td><%= community.name %></td>
-		<td><%= link_to "Edit", edit_community_path(community) %>
-	</tr>
-<% end %>
-</table>
 
-<br />
-<%= link_to "New Community", new_community_path %>
+
+        
+        <div class="push"></div>
+        
+    </div>
+</div>
+

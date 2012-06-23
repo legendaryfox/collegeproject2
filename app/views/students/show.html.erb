@@ -1,10 +1,47 @@
-<h1>Students#show</h1>
-<p>Find me in app/views/students/show.html.erb</p>
+<div class="container">
+	<div id="content">
+    	<h2><%= @student.first_name %>'s Profile</h2>
+        
+        <div class="column-left">
+        	<img src="http://placehold.it/150x150">
+            
+            <ul class="profile-facts">
+            	<li class="my-name"><%= @student.full_name %></li>
+                <li class="my-tag">Bad Astronaut</li>
+                
+                <br />
+                <strong>Unique Facts</strong>
+                <li><%= @student.school %></li>
+                <li><%= @student.email %></li>
+				<li><%= simple_format(@student.about_me) %></li>
+                
+                <hr />
+                <strong>My Communities</strong>
+                <li>Boston, New York City</li>
+                
+                <hr />
+                <strong>My Organizations</strong>
+				
+                <li>
+					<% @student.communities.each do |community| %>
+					<%= link_to community.name, community %>,
+					<% end %>
+				</li>
+                
+            </ul>
 
-First Name: <%= @student.first_name %> <br />
-Last Name: <%= @student.last_name %> <br />
-Email: <%= @student.email %> <br />
-School: <%= @student.school %> <br />
-About Me: <%= simple_format(@student.about_me) %> <br />
+				<% if current_student == @student %>
+				<%= link_to "[Edit]", edit_student_path(@student) %>
+				<% end %>
+        </div>
+        
 
-<%= link_to "Edit", edit_student_path(@student) %>
+        
+
+        <div class="push"></div>
+
+	
+        
+    </div>
+</div>
+
