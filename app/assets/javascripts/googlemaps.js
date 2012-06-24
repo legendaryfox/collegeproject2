@@ -1,5 +1,5 @@
 // Initialize Google Maps
-function initialize() {
+/*function initialize() {
         var myOptions = {
           center: new google.maps.LatLng(42.3583, -71.0603),
           zoom: 14,
@@ -15,7 +15,15 @@ function initialize() {
         };
         var map = new google.maps.Map(document.getElementById("map"),
             myOptions);
-}
+
+
+		var myLatlng = new google.maps.LatLng(42.3583, -71.0603);
+		var marker = new google.maps.Marker({
+	    	position: myLatlng,
+	      	map: map,
+	      	title:"Hello World!"
+	  	});
+}*/
 
 // Set Google Maps div dynamically; change automatically on window resize
 jQuery(document).ready(function() {

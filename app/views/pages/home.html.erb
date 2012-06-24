@@ -1,4 +1,82 @@
+
+<br /><br /><br />
+<%= debug(@cbos) %>
 <div id="map"></div>
+
+<script type="text/javascript">
+
+function closeInfos() {
+	if(infos.length > 0) {
+		
+		/* detach info-window from marker */
+		infos[0].set("marker", null);
+		
+		/* close it */
+		infos[0].close();
+		
+		/* blank out the array */
+		infos.length = 0;
+		
+	}
+}
+function initializeMap() {
+        var myOptions = {
+          center: new google.maps.LatLng(42.3583, -71.0603),
+          zoom: 14,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+		  panControl: false,
+		  streetViewControl: false,
+		  mapTypeControl: false,	  
+		  zoomControl: true,
+		  zoomControlOptions: {
+			position: google.maps.ControlPosition.LEFT_CENTER
+		  },
+		  scaleControl: false,
+        };
+        var map = new google.maps.Map(document.getElementById("map"),
+            myOptions);
+
+
+
+		infos = [];
+/** BEGIN STUFF FOR EACH CBO APPEARING **/
+
+
+/* do some foreach here */
+		<% @cbos.each do |cbo| %>
+		var title = '<%= cbo.name %>';
+		var html = '<%= cbo.description %> AND <%= cbo.email %>';
+		var myLatLng = new google.maps.LatLng(<%= cbo.latitude || 42.3583 %>, <%= cbo.longitude || -71.0603 %>);
+		
+		var marker = new google.maps.Marker({
+			title:title,
+			content:html,
+			map:map,
+			draggable:false,
+			position:myLatLng,
+		});
+		
+		google.maps.event.addListener(marker, 'click', function() {
+			/* close previous windows */
+			closeInfos();
+			
+			/* attach info */
+			var info = new google.maps.InfoWindow({content: this.content});
+			
+			/* open info */
+			info.open(map, this);
+			
+			/* keep the handle for closing it on next click event */
+			infos[0] = info;
+		});
+		
+		<% end %>
+	
+/* end foreach here */
+/** END STUFF FOR EACH CBO APPEARING **/
+}
+
+</script>
 
 <% if !student_signed_in? %>
 <div id="signup-bar">

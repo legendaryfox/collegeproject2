@@ -23,6 +23,8 @@ class PagesController < ApplicationController
     # Nearby Students - 30 mile radius
     @nearby_students = Student.near(user_coordinates, 30)
     
+    @cbos = Cbo.all
+    
   end
 
 
