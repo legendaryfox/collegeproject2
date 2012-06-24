@@ -21,6 +21,8 @@ gem 'formtastic'
 
 gem 'possessive'
 
+gem 'acts-as-taggable-on', '~> 2.3.1'
+
 
 group :development do
 	gem 'annotate', '~> 2.4.1.beta' 
