@@ -1,6 +1,16 @@
 class CbosController < ApplicationController
   def index
-    @cbos = Cbo.all
+    
+    @categories = Cbo.category_counts
+    
+    if (!params[:category] || params[:category] == '')
+      @cbos = Cbo.all
+    else
+      category_string = params[:category]
+      @cbos = Cbo.tagged_with(category_string)      
+    end
+    
+    
   end
 
   def show

@@ -12,6 +12,10 @@ class Cbo < ActiveRecord::Base
   has_many :cbo_community_memberships
   has_many :communities, :through => :cbo_community_memberships, :source => :community
   
+  
+  acts_as_taggable
+  acts_as_taggable_on :categories
+  
   geocoded_by :full_address
   after_validation :geocode, :if => (:address1_changed? || :address2_changed? || :city_changed? || :state_changed? || :zip_changed? || :country_changed?)
   
