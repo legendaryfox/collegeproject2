@@ -8,6 +8,8 @@ class PagesController < ApplicationController
       puts "Case 2"
       @user_location = 'Boston, MA, USA'
     end
+    
+    @user_location = "Boston, MA, USA"
 
     
     # Geocode their location
