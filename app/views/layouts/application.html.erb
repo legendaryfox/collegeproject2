@@ -2,6 +2,19 @@
 <html>
 <head>
   <title>The College Project</title>
+
+	<style type="text/css" media="screen">
+	     .slides_container {
+	         width:570px;
+	         height:270px;
+	     }
+	     .slides_container div {
+	         width:570px;
+	         height:270px;
+	         display:block;
+	     }
+  </style>
+
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <!--[if lt IE9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -13,6 +26,14 @@
 
   <!-- Load Karla Google web font -->
   <link href='http://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
+
+
+	<!-- for slider for cbos !-->
+
+
+	
+	<!-- end cbo slider !-->
+
 </head>
 
 <!-- 
@@ -24,6 +45,8 @@ Interior pages should have a normal <body>
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>
   <%= yield %>
+
+	<br />
   <%= render 'layouts/footer' %>
 </body>
 

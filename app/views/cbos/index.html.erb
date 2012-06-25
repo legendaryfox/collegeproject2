@@ -2,6 +2,11 @@
 	<div id="content">
     	<h2>All Organizations</h2>
         
+		<%= form_tag cbos_path, :method => :get do %>
+			<%= select_tag "category", options_from_collection_for_select(@categories, "name", "name", params[:category]), :include_blank => "All Categories" %>
+			<%= submit_tag "Filter", :name => nil%>
+		<% end %>
+		
         <div class="push"></div>
         
 		<% @cbos.each do |cbo| %>
@@ -21,16 +26,8 @@
         
         <div class="push"></div>
         
-<%= form_tag cbos_path, :method => :get do %>
-	<%= select_tag "category", options_from_collection_for_select(@categories, "name", "name", params[:category]), :include_blank => "All Categories" %>
-	<%= submit_tag "Filter", :name => nil%>
-<% end %>
-<% @categories.each do |category| %>
-	Name: <%= category.name %><br />
 
-<% end %>
-<%= debug(params) %>
-<%= debug(@categories) %>
+
 
 <br /><br />
     </div>

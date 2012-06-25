@@ -1,8 +1,64 @@
-<h1>Cbos#show</h1>
-<p>Find me in app/views/cbos/show.html.erb</p>
+<div class="container">
+	<div id="content">
+    	<h2 style="clear:right; float:right"><%= @cbo.name %></h2>
+        
+        <div class="column-left">
+	<!--
+        	<img src="http://placehold.it/150x150">
+            !-->
 
-Name: <%= @cbo.name %> <br />
-Email: <%= @cbo.email %> <br />
-Description: <%= simple_format(@cbo.description) %> <br />
+<br /><br />
+            <ul class="profile-facts">
+            	<li class="my-name"><%= @cbo.name %></li>
+              <!--  <li class="my-tag">Bad Astronaut</li> !-->
+                
+                <br />
+                <strong>Address</strong>
+				<li><%= @cbo.address1 %></li>
+				<li><%= @cbo.address2 %></li>
+				<li><%= @cbo.city %>, <%= @cbo.state %></li>
+				<li><%= @cbo.zip %></li>
+<!--
+                <li>School</li>
+                <li>Email</li>
+				<li>About Me</li>
+                
+                <hr />
+                <strong>My Communities</strong>
+                <li>Boston, New York City</li>
+                
+         !-->      
 
-<%= link_to "Edit", edit_cbo_path(@cbo) %>
+                
+            </ul>
+
+				<% if current_cbo == @cbo %>
+				<%= link_to "[Edit]", edit_cbo_path(@cbo) %>
+				<% end %>
+        </div>
+
+		<div class="column-right">
+			
+		
+			<img src="http://placehold.it/570x270">
+			             
+			
+			<br />
+			<%= simple_format(@cbo.description) %>
+			<!--
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+			!-->
+		</div>
+        
+
+        
+
+        <div class="push"></div>
+
+	
+        
+    </div>
+</div>
+

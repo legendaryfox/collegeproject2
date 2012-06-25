@@ -156,8 +156,8 @@ header, section, footer, aside, nav, article, figure {
    Profile Page
    -------------------------- */
    
-   #content h2 {float: left; padding: 0 20px; font-size: 2em;}
-   
+   /* #content h2 {float: left; padding: 0 20px; font-size: 2em;} */
+   #content h2 {float: right; padding: 0 20px; font-size: 2em;}
    .column-left {
 	   float: left;
 	   clear: left;
@@ -189,7 +189,9 @@ header, section, footer, aside, nav, article, figure {
    }
    
    .column-right {
-	   float: left;
+	   float: right;
+		clear:right;
+		width:700px;
    }
    
 /* --------------------------
