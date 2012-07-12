@@ -110,9 +110,9 @@ header, section, footer, aside, nav, article, figure {
 	#signup-bar {
 		width: 100%;
 		background-image: url('/images/body_bg.png');
-		height: 100px;
+		height: 30px; /* used to be 100 */
 		position: fixed;
-		bottom: 45px;
+		bottom: 30px; /* used to be 25? */
 	}
 	
 	#signup-bar h2 {
