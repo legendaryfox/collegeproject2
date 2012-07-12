@@ -1,0 +1,14 @@
+<%= semantic_form_for @cbo do |cbo_form| %>
+	<%= cbo_form.inputs do %>
+		<%= cbo_form.input :name %>
+		<%= cbo_form.input :description %>
+		<%= cbo_form.input :categories %>
+		<%= cbo_form.input :address1 %>
+		<%= cbo_form.input :address2 %>
+		<%= cbo_form.input :city %>
+		<%= cbo_form.input :state %>
+		<%= cbo_form.input :zip %>
+		<%= cbo_form.input :country %>
+	<% end %>
+	<%= cbo_form.actions %>
+<% end %>
