@@ -48,9 +48,9 @@ header, section, footer, aside, nav, article, figure {
 	}
 	
 	.header-logo {
-		width: 235px;
-		height: 23px;
-		margin-top: 25px;
+		width: 300px;
+		height: 63px;
+		margin-top: 5px;
 		position: absolute;
 	}
 	
