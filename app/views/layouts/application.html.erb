@@ -37,6 +37,7 @@
 
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+
   <!--[if lt IE9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <%= csrf_meta_tags %>
 
@@ -58,6 +59,7 @@ onload refers to the Javascript function that loads Google maps from googlemaps.
 Interior pages should have a normal <body>
 -->
 <body onload="initializeMap()">
+	
 	<%= render 'layouts/header' %>
 	<!--
 	<p class="notice"><%= notice %></p>

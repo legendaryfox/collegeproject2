@@ -8,6 +8,7 @@ class Cbo < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :name, :description
   attr_accessible :address1, :address2, :city, :state, :zip, :country
+  attr_accessible :image1, :image2, :image3, :image4, :image5
   
   has_many :cbo_community_memberships
   has_many :communities, :through => :cbo_community_memberships, :source => :community
@@ -18,6 +19,68 @@ class Cbo < ActiveRecord::Base
   
   geocoded_by :full_address
   after_validation :geocode, :if => (:address1_changed? || :address2_changed? || :city_changed? || :state_changed? || :zip_changed? || :country_changed?)
+  
+  # begin attachments
+  
+  has_attached_file :image1, 
+    :styles => { :medium => "570x270>", :thumb => "210x100>" },
+    :default_url => "570x270.gif",
+    :storage => :s3,
+    :s3_credentials => "#{Rails.root}/config/s3.yml",
+    :path => "/:style/:id/:filename",
+    :s3_storage_class => :reduced_redundancy
+    
+  validates_attachment_size :image1, :less_than => 20.megabytes
+  validates_attachment_content_type :image1, :content_type => [ /^image\/(?:jpeg|gif|png)$/, nil ]
+  
+  has_attached_file :image2, 
+    :styles => { :medium => "570x270>", :thumb => "210x100>" },
+    :default_url => "570x270.gif",
+    :storage => :s3,
+    :s3_credentials => "#{Rails.root}/config/s3.yml",
+    :path => "/:style/:id/:filename",
+    :s3_storage_class => :reduced_redundancy
+    
+  validates_attachment_size :image2, :less_than => 20.megabytes
+  validates_attachment_content_type :image2, :content_type => [ /^image\/(?:jpeg|gif|png)$/, nil ]
+  
+  has_attached_file :image3, 
+    :styles => { :medium => "570x270>", :thumb => "210x100>" },
+    :default_url => "570x270.gif",
+    :storage => :s3,
+    :s3_credentials => "#{Rails.root}/config/s3.yml",
+    :path => "/:style/:id/:filename",
+    :s3_storage_class => :reduced_redundancy
+    
+  validates_attachment_size :image3, :less_than => 20.megabytes
+  validates_attachment_content_type :image3, :content_type => [ /^image\/(?:jpeg|gif|png)$/, nil ]
+  
+  has_attached_file :image4, 
+    :styles => { :medium => "570x270>", :thumb => "210x100>" },
+    :default_url => "570x270.gif",
+    :storage => :s3,
+    :s3_credentials => "#{Rails.root}/config/s3.yml",
+    :path => "/:style/:id/:filename",
+    :s3_storage_class => :reduced_redundancy
+    
+  validates_attachment_size :image4, :less_than => 20.megabytes
+  validates_attachment_content_type :image4, :content_type => [ /^image\/(?:jpeg|gif|png)$/, nil ]
+  
+  
+  has_attached_file :image5, 
+    :styles => { :medium => "570x270>", :thumb => "210x100>" },
+    :default_url => "570x270.gif",
+    :storage => :s3,
+    :s3_credentials => "#{Rails.root}/config/s3.yml",
+    :path => "/:style/:id/:filename",
+    :s3_storage_class => :reduced_redundancy
+    
+  validates_attachment_size :image5, :less_than => 20.megabytes
+  validates_attachment_content_type :image5, :content_type => [ /^image\/(?:jpeg|gif|png)$/, nil ]
+  
+  # end attachments
+  
+  
   
   def part_of_community?(community)
     return self.cbo_community_memberships.find_by_community_id(community)
@@ -93,5 +156,25 @@ end
 #  state                  :string(255)
 #  zip                    :string(255)
 #  country                :string(255)
+#  image1_file_name       :string(255)
+#  image1_content_type    :string(255)
+#  image1_file_size       :integer
+#  image1_updated_at      :datetime
+#  image2_file_name       :string(255)
+#  image2_content_type    :string(255)
+#  image2_file_size       :integer
+#  image2_updated_at      :datetime
+#  image3_file_name       :string(255)
+#  image3_content_type    :string(255)
+#  image3_file_size       :integer
+#  image3_updated_at      :datetime
+#  image4_file_name       :string(255)
+#  image4_content_type    :string(255)
+#  image4_file_size       :integer
+#  image4_updated_at      :datetime
+#  image5_file_name       :string(255)
+#  image5_content_type    :string(255)
+#  image5_file_size       :integer
+#  image5_updated_at      :datetime
 #
 

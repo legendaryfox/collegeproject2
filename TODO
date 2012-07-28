@@ -1,7 +1,6 @@
 -Fix CBO sign up + edit page
 -Admin rights
 -Location tracking
--Map apostrophe / sanitizing
 
 -Filters - refine
 -Filters - ability to tag, add, etc
@@ -16,6 +15,8 @@ DONE:
 +Copyright on bottom
 +Filter box - dropdown (make shorter)
 +Partners page
++Map apostrophe / sanitizing
++Single photo
 
 
 

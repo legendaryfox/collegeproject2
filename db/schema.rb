@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120624084423) do
+ActiveRecord::Schema.define(:version => 20120728150938) do
 
   create_table "cbo_community_memberships", :force => true do |t|
     t.integer  "cbo_id"
@@ -43,6 +43,26 @@ ActiveRecord::Schema.define(:version => 20120624084423) do
     t.string   "state"
     t.string   "zip"
     t.string   "country"
+    t.string   "image1_file_name"
+    t.string   "image1_content_type"
+    t.integer  "image1_file_size"
+    t.datetime "image1_updated_at"
+    t.string   "image2_file_name"
+    t.string   "image2_content_type"
+    t.integer  "image2_file_size"
+    t.datetime "image2_updated_at"
+    t.string   "image3_file_name"
+    t.string   "image3_content_type"
+    t.integer  "image3_file_size"
+    t.datetime "image3_updated_at"
+    t.string   "image4_file_name"
+    t.string   "image4_content_type"
+    t.integer  "image4_file_size"
+    t.datetime "image4_updated_at"
+    t.string   "image5_file_name"
+    t.string   "image5_content_type"
+    t.integer  "image5_file_size"
+    t.datetime "image5_updated_at"
   end
 
   add_index "cbos", ["email"], :name => "index_cbos_on_email", :unique => true

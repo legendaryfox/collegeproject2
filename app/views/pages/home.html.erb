@@ -60,7 +60,7 @@ function initializeMap() {
 
 /* do some foreach here */
 		<% @cbos.each do |cbo| %>
-		var title = '<%= cbo.name %>';
+		var title = '<%= escape_javascript(cbo.name) %>';
 		var html = '<strong><%= link_to escape_javascript(cbo.name), cbo %></strong><br /><%= escape_javascript(truncate(cbo.description, :length => 250, :separator => ' ')) %> <%= link_to escape_javascript("(more)"), cbo %>';
 		var myLatLng = new google.maps.LatLng(<%= cbo.latitude || 42.3583 %>, <%= cbo.longitude || -71.0603 %>);
 		
