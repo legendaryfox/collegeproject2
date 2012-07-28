@@ -21,9 +21,12 @@
                         	<li><%= link_to "My Commmunities", communities_path %></a></li>
                             <li><%= link_to "Nearby Communities", communities_path %></li>
                             <li><%= link_to "All Communities", communities_path %></li>
+
                         </ul>
                     </div>
                 </li>
+
+				<li><%= link_to "Our Mission", pages_mission_path %></li>
             </ul>
 			
             <ul class="profile">
@@ -51,6 +54,7 @@
 					<li><%= link_to "Logout", destroy_cbo_session_path, :method => :delete %></li>
 				<% else %>
                 	<li><%= link_to "Login", new_student_session_path %></li>
+					<li><%= link_to "Sign up", new_student_registration_path %></li>
 				<% end %>
 
                 

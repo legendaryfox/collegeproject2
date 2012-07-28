@@ -6,11 +6,13 @@
 	
 	<div id="over_map">
 		<p>
-			<center><h3>Filters</h3>
+			<center>
+				<h3>Filter</h3>
 			
 				<%= form_tag pages_home_path, :method => :get do %>
 					<%= select_tag "category", options_from_collection_for_select(@categories, "name", "name", params[:category]), :include_blank => "All Categories" %>
-					<%= submit_tag "Filter", :name => nil%>
+					<br /><br />
+					<%= submit_tag "Apply Filter", :name => nil%>
 				<% end %>	
 			</center>
 		</p>

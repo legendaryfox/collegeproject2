@@ -103,6 +103,7 @@ header, section, footer, aside, nav, article, figure {
 		height: 100%;
 		position: absolute;
 		top: 0;
+		z-index:-50;
 	}
    
    /* Sign Up Bar section */
@@ -232,3 +233,18 @@ header, section, footer, aside, nav, article, figure {
 		padding: 0 20px;
 		margin-top: -13px;
 	}
+	
+	
+	
+/* --------------------------
+   Misc
+   -------------------------- */
+
+
+	.mission-parters {
+
+	}
+
+
+
+

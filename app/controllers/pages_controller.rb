@@ -48,6 +48,9 @@ class PagesController < ApplicationController
     #@cbos = Cbo.all
     
   end
+  
+  def mission
+  end
 
 
 

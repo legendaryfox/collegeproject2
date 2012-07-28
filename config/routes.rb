@@ -28,6 +28,7 @@ Collegeproject2::Application.routes.draw do
   get "pages/allorganizations"
   get "pages/organizationdetail"
   get "pages/profile"
+  get "pages/mission"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

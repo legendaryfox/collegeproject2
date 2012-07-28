@@ -14,8 +14,8 @@ gem "devise", "~> 2.0.4"
 gem "geocoder"
 
 gem 'country-select'
-
 gem 'paperclip', '~> 3.0.3'
+gem 'aws-sdk'
 
 gem 'formtastic'
 
